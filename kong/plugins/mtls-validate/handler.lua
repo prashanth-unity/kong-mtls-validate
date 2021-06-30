@@ -12,7 +12,7 @@ ValidateMtls.VERSION = "1.0.0"
 ValidateMtls.PRIORITY = 810
 
 function ValidateMtls:new()
-    ValidateMtls.super.new(self, "validate-mtls")
+    ValidateMtls.super.new(self, "mtls-validate")
 end
 
 function ValidateMtls:access(config)
