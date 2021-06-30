@@ -19,7 +19,7 @@ function ValidateMtls:access(config)
     ValidateMtls.super.access(self)
 
     if ngx.var.ssl_client_verify ~= "SUCCESS" then
-        kong.response.exit(400, [[{"error":"invalid_mtls", "error_description": "mTLS client not provided or invalid"}]], {
+        kong.response.exit(400, [[{"error":"invalid_request", "error_description": "mTLS client not provided or invalid"}]], {
             ["Content-Type"] = "application/json"
         })
     end
