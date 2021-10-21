@@ -8,7 +8,7 @@ end
 
 local ValidateMtls = BasePlugin:extend()
 
-ValidateMtls.VERSION = "1.0.0"
+ValidateMtls.VERSION = "0.2.0"
 ValidateMtls.PRIORITY = 810
 
 function ValidateMtls:new()
@@ -19,7 +19,7 @@ function ValidateMtls:access(config)
     ValidateMtls.super.access(self)
 
     if ngx.var.ssl_client_verify ~= "SUCCESS" then
-        kong.response.exit(400, [[{"error":"invalid_request", "error_description": "mTLS client not provided or invalid"}]], {
+        kong.response.exit(config.error_response_code, [[{"error":"invalid_request", "error_description": "mTLS client not provided or invalid"}]], {
             ["Content-Type"] = "application/json"
         })
     end

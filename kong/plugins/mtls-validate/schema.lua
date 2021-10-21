@@ -13,6 +13,13 @@ return {
         type = "record",
         fields = {
           {
+            error_response_code = {
+              type = "number",
+              required = false,
+              default = 401,
+            },
+          },
+          {
             upstream_cert_header = {
               type = "string",
               required = false,
