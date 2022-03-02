@@ -3,7 +3,7 @@ local package_name = "kong-plugin-" .. plugin_name
 local package_version = "0.2.0"
 local rockspec_revision = "1"
 
-local github_account_name = "emersonqueiroz"
+local github_account_name = "prashanth-unity"
 local github_repo_name = "kong-plugin-mtls-validate"
 local git_checkout = package_version == "dev" and "master" or package_version
 
@@ -25,6 +25,7 @@ description = {
 
 
 dependencies = {
+  "lua ~> 5.1"
 }
 
 
